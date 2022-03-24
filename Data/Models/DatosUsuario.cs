@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace HagenApi.Data.Models
 {
-    public partial class Registro
+    public partial class DatosUsuario
     {
         public int Id { get; set; }
+        public int? IdUsuario { get; set; }
         public string? Nombre1 { get; set; }
         public string? Nombre2 { get; set; }
         public string? Apellido1 { get; set; }
         public string? Apellido2 { get; set; }
-        public string? Email { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public int? EstadoCivil { get; set; }
         public string? Telefono { get; set; }
@@ -23,5 +23,7 @@ namespace HagenApi.Data.Models
         public DateTime? FechaRegistro { get; set; }
         public DateTime? FechaActualizacion { get; set; }
         public bool? AceptaTerminos { get; set; }
+
+        public virtual Usuario? IdUsuarioNavigation { get; set; }
     }
 }

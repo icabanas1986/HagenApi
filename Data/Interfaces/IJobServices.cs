@@ -10,5 +10,6 @@ namespace HagenApi.Data.Interfaces
     public interface IJobServices
     {
         Task<GeneralResponse> AddRecord(AddRecord request);
+        Task<GeneralResponse> AddPersonal(AddPersonal request);
     }
 }

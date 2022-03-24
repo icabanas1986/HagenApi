@@ -25,5 +25,11 @@ namespace HagenApi.Services
             var response = await jobServices.AddRecord(request);
             return response;
         }
+
+        public async Task<GeneralResponse> AgregaDatosPersonales(AddPersonal request)
+        {
+            var response = await jobServices.AddPersonal(request);
+            return response;
+        }
     }
 }

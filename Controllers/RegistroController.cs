@@ -29,4 +29,16 @@ public async Task<ActionResult<GeneralResponse>> Add([FromBody]AddRecord request
     }
     return Ok(response);
 }
+
+[HttpPost]
+[Route("api/AddPersonal")]
+public async Task<ActionResult<GeneralResponse>> AddPersonal(AddPersonal request)
+{
+    var response = await service.AgregaDatosPersonales(request);
+    if(response.CodigoEstatus!=200)
+    {
+        return BadRequest(response);
+    }
+    return Ok(response);
+}
 }

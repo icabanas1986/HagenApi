@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IJobServices,JobServices>();
 builder.Services.AddScoped<IRegistroServices,RegistroServices>();
 var con = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
-builder.Services.AddDbContext<HagebContext>(option=>option.UseSqlServer(con));
+builder.Services.AddDbContext<HagenContext>(option=>option.UseSqlServer(con));
 
 var app = builder.Build();
 

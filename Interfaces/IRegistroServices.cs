@@ -10,5 +10,6 @@ namespace HagenApi.Interfaces
     public interface IRegistroServices
     {
         Task<GeneralResponse> AgregaRegistro(AddRecord request);
+        Task<GeneralResponse> AgregaDatosPersonales(AddPersonal request);
     }
 }

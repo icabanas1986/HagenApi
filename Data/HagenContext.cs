@@ -6,18 +6,19 @@ using HagenApi.Data.Models;
 
 namespace HagenApi.Data
 {
-    public partial class HagebContext : DbContext
+    public partial class HagenContext : DbContext
     {
-        public HagebContext()
+        public HagenContext()
         {
         }
 
-        public HagebContext(DbContextOptions<HagebContext> options)
+        public HagenContext(DbContextOptions<HagenContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<Registro> Registros { get; set; } = null!;
+        public virtual DbSet<DatosUsuario> DatosUsuarios { get; set; } = null!;
+        public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,9 +30,9 @@ namespace HagenApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Registro>(entity =>
+            modelBuilder.Entity<DatosUsuario>(entity =>
             {
-                entity.ToTable("Registro");
+                entity.ToTable("DatosUsuario");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -53,10 +54,6 @@ namespace HagenApi.Data
                     .IsUnicode(false)
                     .HasColumnName("direccion");
 
-                entity.Property(e => e.Email)
-                    .IsUnicode(false)
-                    .HasColumnName("email");
-
                 entity.Property(e => e.Estado).HasColumnName("estado");
 
                 entity.Property(e => e.EstadoCivil).HasColumnName("estadoCivil");
@@ -72,6 +69,8 @@ namespace HagenApi.Data
                 entity.Property(e => e.FechaRegistro)
                     .HasColumnType("datetime")
                     .HasColumnName("fechaRegistro");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
 
                 entity.Property(e => e.Municipio).HasColumnName("municipio");
 
@@ -90,6 +89,33 @@ namespace HagenApi.Data
                 entity.Property(e => e.Telefono)
                     .IsUnicode(false)
                     .HasColumnName("telefono");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.DatosUsuarios)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK_datosUsuario_usuario");
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuario)
+                    .IsClustered(false);
+
+                entity.ToTable("Usuario");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+
+                entity.Property(e => e.Contrasena)
+                    .IsUnicode(false)
+                    .HasColumnName("contrasena");
+
+                entity.Property(e => e.Correo)
+                    .IsUnicode(false)
+                    .HasColumnName("correo");
+
+                entity.Property(e => e.FechaRegistro)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fechaRegistro");
             });
 
             OnModelCreatingPartial(modelBuilder);

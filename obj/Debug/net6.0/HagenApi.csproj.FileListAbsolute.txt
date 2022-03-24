@@ -7,6 +7,7 @@ C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\HagenApi.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\ref\HagenApi.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\HagenApi.pdb
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Humanizer.dll
+C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -59,4 +60,3 @@ C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\obj\Debug\net6.0\HagenApi.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\obj\Debug\net6.0\ref\HagenApi.dll
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\obj\Debug\net6.0\HagenApi.pdb
 C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\obj\Debug\net6.0\HagenApi.genruntimeconfig.cache
-C:\Users\jorge.cabanas\Documents\Ivan\HagenApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
